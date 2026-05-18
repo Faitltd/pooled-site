@@ -625,3 +625,37 @@ alter table public.cron_runs
       'auto_expire_bookings',
       'archive_old_bookings'
     ])
+<-- so their first scheduled run won't immediately break the same way.
+--
+-- Keeps the two old names (recompute_trade_partner_metrics,
+-- expire_trade_partner_offers) in the list so any historical cron_runs
+-- rows already inserted under those names remain valid.
+
+alter table public.cron_runs drop constraint if exists cron_runs_job_name_check;
+
+alter table public.cron_runs
+  add constraint cron_runs_job_name_check
+  check (
+    job_name = any (array[
+      'auto_approve',
+      'auto_approve_partner',
+      'generate_alerts',
+      'send_alert_digest',
+      'reconcile_stripe',
+      'recompute_trade_partner_metrics',
+      'recompute_free_agent_metrics',
+      'expire_dispatch_offers',
+      'expire_trade_partner_offers',
+      'expire_free_agent_offers',
+      'sla_escalations',
+      'expire_unit_memberships',
+      'tenant_advance_notice',
+      'refresh_trade_coverage',
+      'project_manager',
+      'project_update_reminders',
+      'booking_reminders',
+      'auto_complete_bookings',
+      'auto_expire_bookings',
+      'archive_old_bookings'
+    ])
+  ); third auto-deploy test Mon May 18 08:26:40 MDT 2026 -->
