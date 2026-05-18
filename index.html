@@ -375,14 +375,21 @@
                 </h3>
               </div>
 
-              <a href="mailto:ray@pooledcoop.com" class="flex items-center justify-between bg-brand-primary text-white px-6 md:px-8 py-4 md:py-5 rounded-md w-full sm:w-max min-w-[200px] md:min-w-[240px] group transition-all duration-300 hover:bg-brand-accent shadow-xl">
-                <span class="text-[10px] md:text-[11px] uppercase font-mono font-bold tracking-[0.2em]">Contact Ray</span>
+              <form action="https://formspree.io/f/xykvyagp" method="POST" class="w-full max-w-md flex flex-col gap-4">
+              <input type="hidden" name="_subject" value="Pooled waitlist signup">
+              <input type="email" name="email" required placeholder="Your email" class="bg-neutral-surface border border-text-secondary/20 rounded-md px-5 py-4 font-mono text-sm text-brand-primary placeholder:text-text-secondary/60 focus:outline-none focus:border-brand-accent transition-colors">
+              <input type="text" name="name" placeholder="Your name (optional)" class="bg-neutral-surface border border-text-secondary/20 rounded-md px-5 py-4 font-mono text-sm text-brand-primary placeholder:text-text-secondary/60 focus:outline-none focus:border-brand-accent transition-colors">
+              <input type="text" name="location" placeholder="City, state (optional)" class="bg-neutral-surface border border-text-secondary/20 rounded-md px-5 py-4 font-mono text-sm text-brand-primary placeholder:text-text-secondary/60 focus:outline-none focus:border-brand-accent transition-colors">
+              <textarea name="message" placeholder="What are you trying to buy? (optional)" rows="3" class="bg-neutral-surface border border-text-secondary/20 rounded-md px-5 py-4 font-mono text-sm text-brand-primary placeholder:text-text-secondary/60 focus:outline-none focus:border-brand-accent transition-colors resize-none"></textarea>
+              <button type="submit" class="flex items-center justify-between bg-brand-primary text-white px-6 md:px-8 py-4 md:py-5 rounded-md min-w-[200px] md:min-w-[240px] group transition-all duration-300 hover:bg-brand-accent shadow-xl">
+                <span class="text-[10px] md:text-[11px] uppercase font-mono font-bold tracking-[0.2em]">Join the waitlist</span>
                 <div class="relative w-5 h-5 flex items-center justify-center overflow-hidden">
                   <svg class="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 16 16" fill="none">
                     <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                   </svg>
                 </div>
-              </a>
+              </button>
+            </form>
             </div>
           </div>
 
