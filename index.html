@@ -23,6 +23,19 @@
     .mega-menu-transition {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
+    .hero-fade-in {
+      filter: grayscale(0);
+      transition: filter 1200ms ease-out;
+      animation: heroFadeIn 1200ms ease-out 400ms backwards;
+    }
+    @keyframes heroFadeIn {
+      from { filter: grayscale(1); }
+      to   { filter: grayscale(0); }
+    }
+    .hero-fade-in:hover {
+      filter: grayscale(1);
+    }
   </style>
    
 <link rel="stylesheet" href="/styles.css"></head>
@@ -104,7 +117,7 @@
       </div>
 
       <div class="absolute inset-0 overflow-hidden">
-        <img data-animation-on-scroll="" src="images/hero-oakwood.jpg" alt="Two people standing in front of Oakwood Apartments, a red brick co-op building" class="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[1200ms] ease-out transform" style="transition-delay: 400ms;">
+        <img data-animation-on-scroll="" src="images/hero-oakwood.jpg" alt="Two people standing in front of Oakwood Apartments, a red brick co-op building" class="absolute inset-0 w-full h-full object-cover transform hero-fade-in">
       </div>
       
       <div class="absolute bottom-4 right-4 w-6 h-6 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
